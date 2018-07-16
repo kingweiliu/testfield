@@ -2,10 +2,11 @@ import tensorflow as tf
 import numpy as np
 
 def load_embedding():
-    with open("./google.bin.gz", "rb") as f:
+    with open("/Users/liujingwei/pythonenv/tensorflow/testfield/google.bin", "rb") as f:
         header = f.readline()
         print(header)
         vocab_size, frame_size = map(int, header.split())
+        print(vocab_size, frame_size)
         np_result = np.zeros((vocab_size, frame_size))
         binary_len = np.dtype('float32').itemsize * frame_size
        
